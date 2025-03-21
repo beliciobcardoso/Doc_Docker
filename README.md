@@ -8,25 +8,36 @@ Para listar containers Docker e personalizar as colunas exibidas, você pode usa
 
 ## Comandos básicos:
 
-```bash
 # Listar apenas containers em execução
+```bash
 docker ps
+```
 
 # Listar todos os containers (em execução e parados)
+```bash
 docker ps -a
 ```
 
 ## Personalizando colunas com --format:
 
-```bash
 # Exibir apenas ID e nome
+```bash
 docker ps --format "table {{.ID}}\t{{.Names}}"
+```
 
 # Exibir ID, nome, imagem e status
+```bash
 docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Image}}\t{{.Status}}"
+```
 
 # Exibir ID, nome, portas e tempo em execução
+```bash
 docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Ports}}\t{{.RunningFor}}"
+```
+
+# Exibir ID, nome, status e portas
+```bash
+docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}\t{{.Ports}}"
 ```
 
 ## Colunas disponíveis:
